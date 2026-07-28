@@ -27,6 +27,11 @@
         </span>
       </a>
 
+      <div class="header-actions">
+        <button id="theme-toggle" class="button secondary" aria-pressed="false" title="Toggle dark mode">Theme</button>
+        <a class="button" href="resume.html" target="_blank" rel="noopener">Resume</a>
+      </div>
+
       <!-- kept for screen-reader and small devices fallback; visually hidden on desktop -->
       <div class="header-built-with sr-only">This website was built with the help of AI and human editing.</div>
 
@@ -85,6 +90,101 @@
           Replace this paragraph with a concise summary of who you are, what you specialize in, and the kind of
           problems you enjoy solving. Keep it specific, human, and outcome-oriented.
         </p>
+      </section>
+
+      <!-- Showcase: interactive project cards that open rich case-study modals -->
+      <section class="section" id="showcase" aria-labelledby="showcase-title">
+        <div class="section-heading">
+          <p class="section-kicker">Showcase</p>
+          <h2 id="showcase-title">Selected projects — explore the details</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-modal-target="#case-1">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80" alt="Project thumbnail" />
+            <div class="project-body">
+              <p class="project-type">Product Strategy</p>
+              <h3>Customer Operations Dashboard</h3>
+              <p>Interactive insights for stakeholder decision-making.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-modal-target="#case-2">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80" alt="Project thumbnail" />
+            <div class="project-body">
+              <p class="project-type">Experience Design</p>
+              <h3>Service Booking Redesign</h3>
+              <p>Reduced friction and clarified the booking flow.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-modal-target="#case-3">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Project thumbnail" />
+            <div class="project-body">
+              <p class="project-type">Data Systems</p>
+              <h3>Internal Knowledge Hub</h3>
+              <p>Structured content and analytics to improve onboarding.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Modals for case studies -->
+      <div class="modal" id="case-1" aria-hidden="true">
+        <div class="modal-body">
+          <button class="modal-close" data-close>&times;</button>
+          <h3>Customer Operations Dashboard</h3>
+          <p class="muted">Product Strategy • Systems</p>
+          <p>Built an interactive dashboard that combined operations data, SLA alerts, and a playbook for next actions. The solution reduced time-to-resolution and centralized status reporting across teams.</p>
+          <p><strong>Tech:</strong> SQL, Python, Power Query</p>
+        </div>
+      </div>
+
+      <div class="modal" id="case-2" aria-hidden="true">
+        <div class="modal-body">
+          <button class="modal-close" data-close>&times;</button>
+          <h3>Service Booking Redesign</h3>
+          <p class="muted">Experience Design</p>
+          <p>Reframed the booking experience to reduce uncertainty and increase completion rates. Delivered prototypes, research artifacts, and implementation-ready specs.</p>
+        </div>
+      </div>
+
+      <div class="modal" id="case-3" aria-hidden="true">
+        <div class="modal-body">
+          <button class="modal-close" data-close>&times;</button>
+          <h3>Internal Knowledge Hub</h3>
+          <p class="muted">Systems & Delivery</p>
+          <p>Delivered a lightweight CMS with tagging, ownership, and an analytics dashboard to track repeat questions and documentation gaps.</p>
+        </div>
+      </div>
+
+      <!-- Live Lab: Chart.js visualization, SQL playground (sql.js), Python runner (Skulpt) -->
+      <section class="section" id="lab" aria-labelledby="lab-title">
+        <div class="section-heading">
+          <p class="section-kicker">Live Lab</p>
+          <h2 id="lab-title">Try data demos & code live in your browser</h2>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-card">
+            <h4>Interactive Metrics</h4>
+            <canvas id="skillsChart" width="600" height="320" aria-label="Skills chart"></canvas>
+          </div>
+
+          <div class="lab-card">
+            <h4>SQL Playground (SQLite in browser)</h4>
+            <textarea id="sql-input" rows="6">SELECT * FROM employees;</textarea>
+            <div class="lab-actions"><button id="run-sql" class="button primary">Run</button></div>
+            <pre id="sql-output" class="code-block" aria-live="polite"></pre>
+          </div>
+
+          <div class="lab-card">
+            <h4>Python Runner (Skulpt)</h4>
+            <textarea id="py-input" rows="6">print('Hello from Skulpt!')</textarea>
+            <div class="lab-actions"><button id="run-py" class="button primary">Run</button></div>
+            <pre id="py-output" class="code-block" aria-live="polite"></pre>
+          </div>
+        </div>
       </section>
 
       <section class="ai-carousel section" aria-labelledby="ai-carousel-title">
@@ -340,6 +440,13 @@
       <p class="built-with">Built with the help of AI and human editing — thoughtfully crafted and reviewed by me.</p>
       <p>&copy; <span data-year></span> Connor Knudson. All rights reserved.</p>
     </footer>
+
+    <!-- Third-party libs loaded from CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
     <script src="script.js"></script>
   </body>

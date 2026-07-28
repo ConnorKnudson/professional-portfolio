@@ -758,3 +758,74 @@ h1 {
     height: 36px;
   }
 }
+
+/* New styles for showcase, modals, lab, theme toggle */
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.brand-sub { opacity: 0.9; }
+
+#showcase .project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 10, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+.modal[aria-hidden="false"] { display: flex; }
+
+.modal-body {
+  background: var(--surface);
+  color: var(--ink);
+  padding: 22px;
+  width: min(880px, 92%);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.modal-close {
+  background: transparent;
+  border: 0;
+  font-size: 1.6rem;
+  position: absolute;
+  right: 24px;
+  top: 18px;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.lab-card { background: var(--surface); padding: 18px; border-radius: 8px; border: 1px solid var(--line); }
+
+.code-block { background: #0b0f10; color: #dfeff3; padding: 12px; border-radius: 6px; max-height: 240px; overflow: auto; }
+
+textarea { width: 100%; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace; }
+
+/* Dark theme toggling */
+:root.dark {
+  --bg: #0b0f10;
+  --surface: #0f1415;
+  --surface-soft: #111418;
+  --ink: #eaf2f2;
+  --muted: #9aa6a6;
+  --line: #1f2626;
+}
+
+@media (max-width: 900px) {
+  #showcase .project-grid, .lab-grid { grid-template-columns: 1fr; }
+}
