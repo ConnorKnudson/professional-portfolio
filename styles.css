@@ -1,15 +1,17 @@
 :root {
-  --bg: #f5f1e8;
-  --surface: #fffdf7;
-  --surface-soft: #ebe4d5;
-  --ink: #161918;
-  --muted: #6d746f;
-  --line: #d9cfbf;
-  --accent: #006d77;
-  --accent-strong: #034d55;
+  /* slightly simplified, higher contrast tokens for clarity */
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --surface-soft: #f2efe8;
+  --ink: #0f1413;
+  --muted: #6b6f6c;
+  --line: #e6e0d3;
+  --accent: #007a78;
+  --accent-strong: #035256;
   --copper: #c2653a;
   --plum: #4c3047;
-  --shadow: 0 24px 70px rgba(22, 25, 24, 0.14);
+  --shadow: 0 12px 28px rgba(22, 25, 24, 0.08);
+  --radius: 10px;
 }
 
 * {
@@ -34,10 +36,10 @@ body::before {
   inset: 0;
   pointer-events: none;
   content: "";
+  /* toned-down decorative background to reduce visual noise */
   background:
-    linear-gradient(115deg, rgba(0, 109, 119, 0.08), transparent 30%),
-    linear-gradient(245deg, rgba(194, 101, 58, 0.09), transparent 34%),
-    repeating-linear-gradient(0deg, rgba(22, 25, 24, 0.018) 0 1px, transparent 1px 6px);
+    radial-gradient(circle at 18% 22%, rgba(0, 122, 120, 0.06), transparent 25%),
+    radial-gradient(circle at 78% 40%, rgba(194, 101, 58, 0.04), transparent 24%);
 }
 
 img {
@@ -164,10 +166,10 @@ a {
 
 .hero {
   position: relative;
-  min-height: 94vh;
+  min-height: 86vh;
   display: grid;
   align-items: end;
-  padding: 122px clamp(20px, 5vw, 72px) 66px;
+  padding: 96px clamp(20px, 5vw, 64px) 52px;
   overflow: hidden;
 }
 
@@ -466,13 +468,16 @@ h1 {
   min-width: 132px;
   align-items: center;
   gap: 12px;
-  padding: 8px 0;
-  opacity: 0.9;
-  filter: drop-shadow(0 14px 22px rgba(22, 25, 24, 0.12));
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  opacity: 0.98;
+  box-shadow: var(--shadow);
   transition:
     opacity 180ms ease,
     transform 180ms ease,
-    filter 180ms ease;
+    box-shadow 180ms ease;
 }
 
 .ai-card:hover {
@@ -526,8 +531,8 @@ h1 {
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 12px 38px rgba(22, 25, 24, 0.08);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(22, 25, 24, 0.06);
   transition:
     transform 220ms ease,
     box-shadow 220ms ease,
@@ -547,7 +552,7 @@ h1 {
 }
 
 .project-body {
-  padding: 24px;
+  padding: 18px;
 }
 
 .project-body h3,
