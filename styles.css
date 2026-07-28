@@ -76,6 +76,20 @@ a {
   backdrop-filter: blur(20px) saturate(1.15);
 }
 
+.header-built-with {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin-left: 8px;
+  align-self: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .header-built-with {
+    display: none;
+  }
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
