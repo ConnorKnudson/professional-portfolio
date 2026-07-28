@@ -411,6 +411,7 @@ h1 {
   width: max-content;
   gap: clamp(34px, 6vw, 72px);
   animation: ai-scroll 32s linear infinite;
+  animation-direction: reverse; /* scroll cards left instead of right */
 }
 
 .carousel-shell:hover .carousel-track {
