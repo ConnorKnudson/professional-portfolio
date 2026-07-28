@@ -84,9 +84,23 @@ a {
   white-space: nowrap;
 }
 
+.brand-sub {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  opacity: 0.95;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .brand-sub { display: none; }
+}
+
 @media (max-width: 620px) {
   .header-built-with {
-    display: none;
+    display: block; /* sr-only fallback will keep it accessible when hidden visually */
   }
 }
 

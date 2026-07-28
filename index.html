@@ -21,10 +21,14 @@
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Go to homepage">
         <span class="brand-mark">YN</span>
-        <span>Connor Knudson</span>
+        <span>
+          Connor Knudson
+          <span class="brand-sub">— built with AI + human editing</span>
+        </span>
       </a>
 
-      <div class="header-built-with">This website was built with the help of AI and human editing.</div>
+      <!-- kept for screen-reader and small devices fallback; visually hidden on desktop -->
+      <div class="header-built-with sr-only">This website was built with the help of AI and human editing.</div>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span>
