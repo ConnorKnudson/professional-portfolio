@@ -612,6 +612,14 @@ h1 {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.site-footer .built-with {
+  max-width: 1180px;
+  margin: 0 auto 6px;
+  font-size: 0.92rem;
+  color: rgba(255, 253, 248, 0.78);
+  opacity: 0.95;
+}
+
 .site-footer p {
   max-width: 1180px;
   margin: 0 auto;
