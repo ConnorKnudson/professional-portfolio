@@ -321,7 +321,8 @@ h1 {
   margin-bottom: 34px;
 }
 
-.ai-carousel {
+.ai-carousel,
+.tech-carousel {
   position: relative;
   max-width: none;
   padding-block: 54px 82px;
@@ -334,7 +335,8 @@ h1 {
     rgba(235, 228, 213, 0.72);
 }
 
-.ai-carousel::before {
+.ai-carousel::before,
+.tech-carousel::before {
   position: absolute;
   inset: 18px clamp(18px, 4vw, 52px);
   border: 1px solid rgba(255, 253, 247, 0.45);
@@ -348,6 +350,18 @@ h1 {
   backdrop-filter: blur(24px) saturate(1.35);
   content: "";
   pointer-events: none;
+}
+
+.code-mark {
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(0, 109, 119, 0.88), rgba(76, 48, 71, 0.95));
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .carousel-heading {
